@@ -30,6 +30,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
             credentials: "include", // IMPORTANT: Include cookies
             headers: {
               Accept: "application/json",
+              "Access-Control-Allow-Credentials": "true",
             },
           }
         );
