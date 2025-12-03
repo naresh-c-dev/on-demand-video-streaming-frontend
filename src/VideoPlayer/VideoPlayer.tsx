@@ -72,6 +72,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
         backBufferLength: 90,
         xhrSetup: (xhr, url) => {
           // Ensure credentials are included for CloudFront signed cookies
+          console.log("Setting XHR withCredentials for URL:", url);
           xhr.withCredentials = true;
         },
       });
@@ -90,6 +91,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
 
       hls.on(Hls.Events.ERROR, (event, data) => {
         console.error("HLS Error:", data);
+        console.log("HLS Error event:", event);
 
         if (data.fatal) {
           switch (data.type) {
